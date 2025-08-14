@@ -103,6 +103,7 @@ function wcpb_add_to_my_account_dashboard() {
     }
 }
 
+
 /**
  * HELPER FUNCTIONS
  * form order: 5 needed for my account page display using Avada theme
