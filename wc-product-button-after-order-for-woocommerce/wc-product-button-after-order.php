@@ -6,7 +6,7 @@ Description: Ensures order continuity to a configurable external URL by adding a
 Author: Websavers Inc.
 Author URI: https://websavers.ca
 Contributors: jas8522
-Version: 1.0.0
+Version: 1.0.1
 License: MIT
 Text Domain: wc-product-button
 */
@@ -69,8 +69,12 @@ function wcpb_add_custom_woocommerce_general_field_cta_fields() {
 }
 
 function wcpb_save_custom_woocommerce_general_field_cta_fields( $post_id ) {
-	update_post_meta( $post_id, 'cta_url', esc_attr( $_POST['cta_url'] ) );
-    update_post_meta( $post_id, 'cta_text', esc_attr( $_POST['cta_text'] ) );
+    if (isset($_POSET['cta_url'])){
+	    update_post_meta( $post_id, 'cta_url', esc_attr( $_POST['cta_url'] ) );
+    }
+    if (isset($_POSET['cta_text'])){
+        update_post_meta( $post_id, 'cta_text', esc_attr( $_POST['cta_text'] ) );
+    }
 }
 
 
